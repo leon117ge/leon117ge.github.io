@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Leon117的博客</title>
+    <link>https://leon117ge.github.io/post/</link>
+    <description>Recent content in Posts on Leon117的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 16 Mar 2018 15:20:46 +0800</lastBuildDate>
+    
+	<atom:link href="https://leon117ge.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>上网的艺术</title>
+      <link>https://leon117ge.github.io/2018/03/%E4%B8%8A%E7%BD%91%E7%9A%84%E8%89%BA%E6%9C%AF/</link>
+      <pubDate>Fri, 16 Mar 2018 15:20:46 +0800</pubDate>
+      
+      <guid>https://leon117ge.github.io/2018/03/%E4%B8%8A%E7%BD%91%E7%9A%84%E8%89%BA%E6%9C%AF/</guid>
+      <description>&lt;p&gt;&lt;code&gt;摘要：这是一篇关于科学上网的文章。主要介绍购买VPS，配置shadowsocks服务端与客户端，Youtube加速服务，智能手机终端的socks5代理软件等。&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Hello World!</title>
+      <link>https://leon117ge.github.io/2018/03/hello-world/</link>
+      <pubDate>Wed, 14 Mar 2018 16:54:38 +0800</pubDate>
+      
+      <guid>https://leon117ge.github.io/2018/03/hello-world/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Leon117的个人博客终于上线啦！&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Welcome to Tranquilpeak 0.4.3-BETA</title>
+      <link>https://leon117ge.github.io/2015/06/welcome-to-tranquilpeak-0.4.3-beta/</link>
+      <pubDate>Mon, 15 Jun 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://leon117ge.github.io/2015/06/welcome-to-tranquilpeak-0.4.3-beta/</guid>
+      <description>&lt;p&gt;Tranquilpeak is a gorgeous responsive theme for Hugo blog framework. It has many features and integrated services to improve user experience.
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Cover image showcase</title>
+      <link>https://leon117ge.github.io/2015/05/cover-image-showcase/</link>
+      <pubDate>Wed, 13 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://leon117ge.github.io/2015/05/cover-image-showcase/</guid>
+      <description>&lt;p&gt;Tranquilpeak integrate a unique &amp;ldquo;cover image&amp;rdquo; feature. Open this post to see how this feature sublimate your article.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

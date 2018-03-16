@@ -1,0 +1,747 @@
+
+
+  
+    
+  
+
+
+  
+
+
+
+
+  
+
+
+  
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Hugo 0.37 with theme Tranquilpeak 0.4.3-BETA">
+    <title>上网的艺术</title>
+    <meta name="author" content="Leon117">
+    <meta name="keywords" content="">
+
+    <link rel="icon" href="https://leon117ge.github.io/favicon.png">
+    
+
+    
+    <meta name="description" content="摘要：这是一篇关于科学上网的文章。主要介绍购买VPS，配置shadowsocks服务端与客户端，Youtube加速服务，智能手机终端的socks5代理软件等。
+
+">
+    <meta property="og:description" content="摘要：这是一篇关于科学上网的文章。主要介绍购买VPS，配置shadowsocks服务端与客户端，Youtube加速服务，智能手机终端的socks5代理软件等。
+
+">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="上网的艺术">
+    <meta property="og:url" content="/2018/03/%E4%B8%8A%E7%BD%91%E7%9A%84%E8%89%BA%E6%9C%AF/">
+    <meta property="og:site_name" content="Leon117的博客">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Leon117的博客">
+    <meta name="twitter:description" content="摘要：这是一篇关于科学上网的文章。主要介绍购买VPS，配置shadowsocks服务端与客户端，Youtube加速服务，智能手机终端的socks5代理软件等。
+
+">
+    
+    
+
+    
+    
+
+    
+      <meta property="og:image" content="//www.gravatar.com/avatar/5d6d9f8ee3f35fce6d327ec4257c2e5c?s=640">
+    
+
+    
+      <meta property="og:image" content="https://leon117ge.github.io/images/shadowsocks.png">
+    
+    
+      <meta property="og:image" content="https://leon117ge.github.io/rick.jpg">
+    
+    
+
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="https://leon117ge.github.io/css/style-jsjn0006wyhpyzivf6yceb31gvpjatbcs3qzjvlumobfnugccvobqwxnnaj8.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="4">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://leon117ge.github.io/">Leon117的博客</a>
+  </div>
+  
+    
+      <a class="header-right-icon open-algolia-search"
+         href="https://leon117ge.github.io/">
+    
+    
+      <i class="fa fa-lg fa-home"></i>
+    
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="4">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://leon117ge.github.io/#about">
+          <img class="sidebar-profile-picture" src="//www.gravatar.com/avatar/5d6d9f8ee3f35fce6d327ec4257c2e5c?s=110" alt="作者的图片" />
+        </a>
+        <h4 class="sidebar-profile-name">Leon117</h4>
+        
+          <h5 class="sidebar-profile-bio"><strong>GEEK</strong></h5>
+        
+      </div>
+    
+
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+
+      <a class="sidebar-button-link " href="https://leon117ge.github.io/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">首页</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+
+      <a class="sidebar-button-link " href="https://leon117ge.github.io/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">分类</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+
+      <a class="sidebar-button-link " href="https://leon117ge.github.io/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">标签</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+
+      <a class="sidebar-button-link " href="https://leon117ge.github.io/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">归档</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+
+      <a class="sidebar-button-link " href="https://leon117ge.github.io/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">关于</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/leon117ge" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+
+      <a class="sidebar-button-link open-algolia-search" href="https://leon117ge.github.io/#search">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-search"></i>
+      
+      <span class="sidebar-button-desc">搜索</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+
+      <a class="sidebar-button-link " href="https://leon117ge.github.io/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+
+  </div>
+</nav>
+
+      
+  <div class="post-header-cover
+              text-center
+              "
+       style="background-image:url('rick.jpg')"
+       data-behavior="4">
+    
+      <div class="post-header main-content-wrap text-center">
+  
+    <h1 class="post-title" itemprop="headline">
+      上网的艺术
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2018-03-16T15:20:46&#43;08:00">
+        
+  三月 16, 2018
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="https://leon117ge.github.io/categories/geek">Geek</a>
+    
+  
+
+  </div>
+
+</div>
+    
+  </div>
+
+
+      <div id="main" data-behavior="4"
+        class="hasCover
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <p><code>摘要：这是一篇关于科学上网的文章。主要介绍购买VPS，配置shadowsocks服务端与客户端，Youtube加速服务，智能手机终端的socks5代理软件等。</code></p>
+
+<p></p>
+
+<p>写在最前： <strong><span class="highlight-text red">本文由作者Leon117原创，未经同意不得转载。</span></strong></p>
+
+<p><code>这篇文章会比较长,大家可以根据目录导航自己想看的内容。</code></p>
+
+<h1 id="table-of-contents">目录</h1><nav id="TableOfContents">
+<ul>
+<li><a href="#科学上网">科学上网</a>
+<ul>
+<li><a href="#浏览器">浏览器</a></li>
+<li><a href="#linode-vps服务器">Linode VPS服务器</a>
+<ul>
+<li><a href="#租用vps服务器-dashboard操作">租用VPS服务器，Dashboard操作</a></li>
+<li><a href="#通过ssh配置自己的服务器">通过SSH配置自己的服务器</a></li>
+</ul></li>
+<li><a href="#shadowsocks">Shadowsocks</a>
+<ul>
+<li><a href="#配置shadowsocks服务器端">配置shadowsocks服务器端</a></li>
+<li><a href="#配置shadowsocks客户端">配置shadowsocks客户端</a></li>
+<li><a href="#配置youtube加速服务">配置Youtube加速服务</a></li>
+</ul></li>
+<li><a href="#其他终端产品客户端">其他终端产品客户端</a>
+<ul>
+<li><a href="#iphone客户端">Iphone客户端</a></li>
+<li><a href="#华硕路由器客户端">华硕路由器客户端</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+
+<h1 id="科学上网">科学上网</h1>
+
+<h2 id="浏览器">浏览器</h2>
+
+<h2 id="linode-vps服务器">Linode VPS服务器</h2>
+
+<h3 id="租用vps服务器-dashboard操作">租用VPS服务器，Dashboard操作</h3>
+
+<h3 id="通过ssh配置自己的服务器">通过SSH配置自己的服务器</h3>
+
+<h2 id="shadowsocks">Shadowsocks</h2>
+
+<h3 id="配置shadowsocks服务器端">配置shadowsocks服务器端</h3>
+
+<h3 id="配置shadowsocks客户端">配置shadowsocks客户端</h3>
+
+<h3 id="配置youtube加速服务">配置Youtube加速服务</h3>
+
+<h2 id="其他终端产品客户端">其他终端产品客户端</h2>
+
+<h3 id="iphone客户端">Iphone客户端</h3>
+
+<h3 id="华硕路由器客户端">华硕路由器客户端</h3>
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">标签</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://leon117ge.github.io/tags/geek/">GEEK</a>
+
+  <a class="tag tag--primary tag--small" href="https://leon117ge.github.io/tags/vps/">VPS</a>
+
+  <a class="tag tag--primary tag--small" href="https://leon117ge.github.io/tags/google/">google</a>
+
+                  </div>
+                
+              
+            
+            
+  <div class="post-actions-wrap">
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://leon117ge.github.io/2018/03/hello-world/" data-tooltip="Hello World!">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://leon117ge.github.io/2018/03/%E4%B8%8A%E7%BD%91%E7%9A%84%E8%89%BA%E6%9C%AF/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://leon117ge.github.io/2018/03/%E4%B8%8A%E7%BD%91%E7%9A%84%E8%89%BA%E6%9C%AF/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://leon117ge.github.io/2018/03/%E4%B8%8A%E7%BD%91%E7%9A%84%E8%89%BA%E6%9C%AF/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#table-of-contents">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+            
+              
+                <div id="disqus_thread"></div>
+<script>
+
+
+
+
+
+(function() { 
+var d = document, s = d.createElement('script');
+s.src = 'https://leon117ge.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2018 <a href="https://github.com/leon117ge">leon117ge</a>. All Rights Reserved
+  </span>
+  <div class="pull-right">
+    <form name="cse" id="searchbox" action="/list.html">
+      <input type="hidden" name="cref" value="" />
+      <input type="hidden" name="ie" value="utf-8" />
+      <input type="hidden" name="hl" value="zh-CN" />
+      <input name="q" type="text" size="20" />
+      <input type="submit" name="sa" value="站内搜索" />
+    </form>
+  </div>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+        
+  <div class="post-actions-wrap">
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://leon117ge.github.io/2018/03/hello-world/" data-tooltip="Hello World!">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://leon117ge.github.io/2018/03/%E4%B8%8A%E7%BD%91%E7%9A%84%E8%89%BA%E6%9C%AF/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://leon117ge.github.io/2018/03/%E4%B8%8A%E7%BD%91%E7%9A%84%E8%89%BA%E6%9C%AF/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://leon117ge.github.io/2018/03/%E4%B8%8A%E7%BD%91%E7%9A%84%E8%89%BA%E6%9C%AF/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#table-of-contents">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fleon117ge.github.io%2F2018%2F03%2F%25E4%25B8%258A%25E7%25BD%2591%25E7%259A%2584%25E8%2589%25BA%25E6%259C%25AF%2F">
+          <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fleon117ge.github.io%2F2018%2F03%2F%25E4%25B8%258A%25E7%25BD%2591%25E7%259A%2584%25E8%2589%25BA%25E6%259C%25AF%2F">
+          <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fleon117ge.github.io%2F2018%2F03%2F%25E4%25B8%258A%25E7%25BD%2591%25E7%259A%2584%25E8%2589%25BA%25E6%259C%25AF%2F">
+          <i class="fa fa-google-plus"></i><span>分享到 Google&#43;</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="//www.gravatar.com/avatar/5d6d9f8ee3f35fce6d327ec4257c2e5c?s=110" alt="作者的图片" />
+    
+    <h4 id="about-card-name">Leon117</h4>
+    
+      <div id="about-card-bio"><strong>GEEK</strong></div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        博主
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        China
+      </div>
+    
+  </div>
+</div>
+
+    <div id="algolia-search-modal" class="modal-container">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="close-button"><i class="fa fa-close"></i></span>
+      <a href="https://algolia.com" target="_blank" rel="noopener" class="searchby-algolia text-color-light link-unstyled">
+        <span class="searchby-algolia-text text-color-light text-small">by</span>
+        <img class="searchby-algolia-logo" src="https://www.algolia.com/static_assets/images/press/downloads/algolia-light.svg">
+      </a>
+      <i class="search-icon fa fa-search"></i>
+      <form id="algolia-search-form">
+        <input type="text" id="algolia-search-input" name="search"
+          class="form-control input--large search-input" placeholder="搜索" />
+      </form>
+    </div>
+    <div class="modal-body">
+      <div class="no-result text-color-light text-center"></div>
+      <div class="results">
+        
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://leon117ge.github.io/2018/03/%E4%B8%8A%E7%BD%91%E7%9A%84%E8%89%BA%E6%9C%AF/">
+                <h3 class="media-heading">上网的艺术</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Mar 3, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p><code>摘要：这是一篇关于科学上网的文章。主要介绍购买VPS，配置shadowsocks服务端与客户端，Youtube加速服务，智能手机终端的socks5代理软件等。</code></p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://leon117ge.github.io/2018/03/hello-world/">
+                <h3 class="media-heading">Hello World!</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Mar 3, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p><strong>Leon117的个人博客终于上线啦！</strong></p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://leon117ge.github.io/2015/06/welcome-to-tranquilpeak-0.4.3-beta/">
+                <h3 class="media-heading">Welcome to Tranquilpeak 0.4.3-BETA</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jun 6, 2015
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>Tranquilpeak is a gorgeous responsive theme for Hugo blog framework. It has many features and integrated services to improve user experience.
+</p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://leon117ge.github.io/2015/05/cover-image-showcase/">
+                <h3 class="media-heading">Cover image showcase</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  May 5, 2015
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>Tranquilpeak integrate a unique &ldquo;cover image&rdquo; feature. Open this post to see how this feature sublimate your article.</p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+      </div>
+    </div>
+    <div class="modal-footer">
+      <p class="results-count text-medium"
+         data-message-zero=""
+         data-message-one=""
+         data-message-other="">
+         4 posts found
+      </p>
+    </div>
+  </div>
+</div>
+
+    
+  
+    
+    <div id="cover" style="background-image:url('https://leon117ge.github.io/images/cover-v1.2.0.jpg');"></div>
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://leon117ge.github.io/js/script-qi9wbxp2ya2j6p7wx1i6tgavftewndznf4v0hy2gvivk1rxgc3lm7njqb6bz.min.js"></script>
+
+
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/leon117ge.github.io\/2018\/03\/%E4%B8%8A%E7%BD%91%E7%9A%84%E8%89%BA%E6%9C%AF\/';
+          
+            this.page.identifier = '\/2018\/03\/%E4%B8%8A%E7%BD%91%E7%9A%84%E8%89%BA%E6%9C%AF\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'leon';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+    
+  </body>
+</html>
+
