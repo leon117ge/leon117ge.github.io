@@ -1,5 +1,9 @@
 
 
+  
+    
+  
+
 
   
 
@@ -18,25 +22,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hugo 0.37 with theme Tranquilpeak 0.4.3-BETA">
-    <title>Hugo</title>
+    <title>Chocolatey</title>
     <meta name="author" content="Leon117">
     <meta name="keywords" content="">
 
     <link rel="icon" href="https://leon117ge.github.io/favicon.png">
     
-      <link rel="alternate" type="application/rss+xml" title="RSS" href="https://leon117ge.github.io/tags/hugo/index.xml">
-    
 
     
-    <meta name="description" content="Leon117的博客">
-    <meta property="og:description" content="Leon117的博客">
+    <meta name="description" content="Windows系统的包管理器——chocolatey
+
+">
+    <meta property="og:description" content="Windows系统的包管理器——chocolatey
+
+">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Hugo">
-    <meta property="og:url" content="/tags/hugo/">
+    <meta property="og:title" content="Chocolatey">
+    <meta property="og:url" content="/2018/03/chocolatey/">
     <meta property="og:site_name" content="Leon117的博客">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Leon117的博客">
-    <meta name="twitter:description" content="Leon117的博客">
+    <meta name="twitter:description" content="Windows系统的包管理器——chocolatey
+
+">
     
     
 
@@ -48,6 +56,10 @@
     
 
     
+      <meta property="og:image" content="https://leon117ge.github.io/images/small.jpg">
+    
+    
+      <meta property="og:image" content="https://leon117ge.github.io/rick.jpg">
     
     
 
@@ -71,7 +83,7 @@
 
   <body>
     <div id="blog">
-      <header id="header" data-behavior="1">
+      <header id="header" data-behavior="4">
   <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
   <div class="header-title">
     <a class="header-title-link" href="https://leon117ge.github.io/">Leon117的博客</a>
@@ -89,7 +101,7 @@
   
 </header>
 
-      <nav id="sidebar" data-behavior="1">
+      <nav id="sidebar" data-behavior="4">
   <div class="sidebar-container">
     
       <div class="sidebar-profile">
@@ -207,40 +219,24 @@
 </nav>
 
       
-        
-
-      
-      <div id="main" data-behavior="1"
-        class="
-               hasCoverMetaIn
-               ">
-        
-          <section class="postShorten-group main-content-wrap">
-            
-            
-              
-  
+  <div class="post-header-cover
+              text-center
+              "
+       style="background-image:url('/rick.jpg')"
+       data-behavior="4">
     
+      <div class="post-header main-content-wrap text-center">
   
-
-
+    <h1 class="post-title" itemprop="headline">
+      Chocolatey
+    </h1>
   
-
-<article class="postShorten postShorten--thumbnailimg-left" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://leon117ge.github.io/2018/03/hello-world/">
-          Hello World!
-        </a>
-      </h1>
-      
+  
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2018-03-14T16:54:38&#43;08:00">
+      <time itemprop="datePublished" datetime="2018-03-17T23:28:55&#43;08:00">
         
-  三月 14, 2018
+  三月 17, 2018
 
       </time>
     
@@ -255,31 +251,157 @@
 
   </div>
 
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p><strong>Leon117的个人博客终于上线啦！</strong></p>
+</div>
+    
+  </div>
+
+
+      <div id="main" data-behavior="4"
+        class="hasCover
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <p><strong>Windows系统的包管理器——chocolatey</strong></p>
 
 <p></p>
-      <p>
-        <a href="https://leon117ge.github.io/2018/03/hello-world/" class="postShorten-excerpt_link link">阅读全文</a>
+
+<p>包管理器(Package Manager)在Linux系统中是很常用的工具，比如Debian/Ubuntu系列的apt-get，CentOS的yum，ArchLinux的Pacman等。
+<a href="https://chocolatey.org/">chocolatey</a>是一个Windows系统的包管理器，目前拥有5600多个软件包，可以非常方便的安装，升级，卸载程序。输入一行代码，例如：<code>choco install googlechrome</code>，就可以安装chrome浏览器了，很酷是不是？下面就来介绍一下玩法。</p>
+
+<h2 id="使用powershell安装">使用Powershell安装</h2>
+
+<p>安装chocolatey需要用到windows系统的一个工具：Powershell。Win7以上版本系统自带的Powershell都可以满足使用需要。</p>
+
+<p>点击开始菜单的windows图标，输入Powershell，会出现Windows Powershell程序，点击右键，以管理员身份运行(很重要，一定要用管理员运行)。输入命令：</p>
+
+<pre><code>Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+</code></pre>
+
+<p>等一会就安装好了。</p>
+
+<h2 id="使用choco">使用choco</h2>
+
+<p>choco的使用非常简单，就三个命令：</p>
+
+<pre><code>choco install     ##安装
+choco upgrade     ##升级
+choco uninstall   ##卸载
+</code></pre>
+
+<p>我们可以去官网的<a href="https://chocolatey.org/packages">Packages</a>查看可用的软件包。我个人推荐几款软件：</p>
+
+<pre><code>choco install -y googlechrome   //google的chrome浏览器
+choco install -y firefox        //firefox浏览器，跟chrome二选一吧
+choco install -y 7zip           //7zip，非常好用的解压缩工具
+choco install -y vlc            //默认的播放器，不用多介绍了吧
+choco install -y putty.install  //PuTTy，windows的SSH
+choco install -y you-get        //命令行下载youtube视频
+choco install -y youtube-dl     //命令行下载youtube视频
+choco install -y atom           //atom编辑器
+choco install -y git            //github的工具
+choco install -y hugo           //hugo，静态网站生成工具
+choco install -y aria2          //aria2c，强大的下载工具
+</code></pre>
+
+<p>这几个是比较常用的工具。像7zip，vlc，chrome这些都可以说是装机必备了。使用choco可以很快完成安装，而其另一个好处是为很多命令行的工具添加了环境变量。例如aria2c可以在任何目录中工作，下载文件，操作起来变得跟Linux很类似，效率很高。</p>
+
+<p>最后，升级软件记得用：</p>
+
+<pre><code>choco upgrade chocolatey
+</code></pre>
+
+<p>Have fun！</p>
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">标签</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://leon117ge.github.io/tags/geek/">GEEK</a>
+
+  <a class="tag tag--primary tag--small" href="https://leon117ge.github.io/tags/windows/">Windows</a>
+
+  <a class="tag tag--primary tag--small" href="https://leon117ge.github.io/tags/powershell/">PowerShell</a>
+
+                  </div>
+                
+              
+            
+            
+  <div class="post-actions-wrap">
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://leon117ge.github.io/2018/03/%E4%B8%8A%E7%BD%91%E7%9A%84%E8%89%BA%E6%9C%AF/" data-tooltip="上网的艺术">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
         
-      </p>
-    </div>
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://leon117ge.github.io/2018/03/chocolatey/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://leon117ge.github.io/2018/03/chocolatey/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://leon117ge.github.io/2018/03/chocolatey/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
   </div>
-  
-    <a href="https://leon117ge.github.io/2018/03/hello-world/">
-      <div class="postShorten-thumbnailimg">
-        <img alt="" itemprop="image" src="https://leon117ge.github.io/images/hello.jpg"/>
-      </div>
-    </a>
-  
-</article>
+
 
             
-            
-
-          </section>
-        
+          </div>
+        </article>
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
     &copy; 2018 <a href="https://github.com/leon117ge">leon117ge</a>. All Rights Reserved
@@ -296,6 +418,96 @@
 </footer>
 
       </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+        
+  <div class="post-actions-wrap">
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://leon117ge.github.io/2018/03/%E4%B8%8A%E7%BD%91%E7%9A%84%E8%89%BA%E6%9C%AF/" data-tooltip="上网的艺术">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://leon117ge.github.io/2018/03/chocolatey/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://leon117ge.github.io/2018/03/chocolatey/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://leon117ge.github.io/2018/03/chocolatey/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fleon117ge.github.io%2F2018%2F03%2Fchocolatey%2F">
+          <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fleon117ge.github.io%2F2018%2F03%2Fchocolatey%2F">
+          <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fleon117ge.github.io%2F2018%2F03%2Fchocolatey%2F">
+          <i class="fa fa-google-plus"></i><span>分享到 Google&#43;</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
     </div>
     
     <div id="about">
@@ -447,6 +659,8 @@ $(document).ready(function() {
 });
 </script>
 
+
+  
 
 
 
